@@ -1,69 +1,38 @@
-<!--Réaliser par Kyliann Aland et Alexis Rossignol-->
 <template>
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Partie</ion-title>
+        <ion-title class="ion_center">Connexion</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Tab 2</ion-title>
+          <ion-title size="large">Tab 1</ion-title>
         </ion-toolbar>
       </ion-header>
 
       <ion-item>
-        <ion-label position="floating">Nom utilisateur</ion-label>
-        <ion-input type="text" v-model="name"></ion-input>
+        <ion-label position="floating" class="ion_center">Email</ion-label>
+        <ion-input type="text" v-model="Email" class="ion_center"></ion-input>
+        <ion-label position="floating" class="ion_center">Mot de passe</ion-label>
+        <ion-input type="text" v-model="Password" class="ion_center"></ion-input>
       </ion-item>
-      <ion-button color="primary" @click="addUser">Ajouter</ion-button>
-
-      <div id="list__users">
-        <user-card v-for="(user, index) in users" :key="index" :name="user.name" :score="number"/>
-      </div>
-      <ion-button color="danger" @click="decrement()">-</ion-button>
-      <span></span>
-      <ion-button color="primary" @click="increment()">+</ion-button>
-      <br>
-      <ion-button color="warning" @click="resetUser">Réinitialiser</ion-button>
-      <ion-button color="warning" @click="resetUser" href="/tabs/tab1">Arret</ion-button>
-      <br>
+      <ion-button color="primary" @click="connexion" class="ion_center center_buton"  shape="round">Connexion</ion-button>
     </ion-content>
   </ion-page>
 </template>
+
 <script>
-import {defineComponent, ref} from 'vue';
+import {defineComponent} from 'vue';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonInput, IonButton } from '@ionic/vue';
-import UserCard from "@/components/UserCard";
 
 export default defineComponent({
-  name: 'Tab2Page',
-  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonItem, IonLabel, IonInput, IonButton, UserCard },
+  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonItem, IonLabel, IonInput, IonButton},
   setup() {
-    let users = ref([])
-    let name = ref('')
-    let number = ref(0)
 
-    const addUser = () => {
-      users.value.push({
-        name: name.value,
-        score: 0
-      })
-      name.value = ''
-    }
-    const resetUser = () => {
-      users.value = []
-    }
-    const decrement = () => {
-      number.value--
-    }
 
-    const increment = () => {
-      number.value++
-    }
-
-    return {users, name, addUser, resetUser, number, decrement, increment}
   }
-});
+})
 </script>
+

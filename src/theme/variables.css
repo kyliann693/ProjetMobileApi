@@ -75,7 +75,43 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+.ion_center{
+  text-align: center;
+}
 
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  text-align: center;
+
+  margin: 0 auto;
+}
+
+b {
+  width: 100%;
+}
+
+.ripple-parent, .ripple-parent_bis, .center_buton {
+  display: flex;
+  align-items: center;                  /*design bouton*/
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 30% !important;
+  margin: 1% auto;
+  user-select: none;
+}
+.ripple-parent_bis, .center_buton{
+  width: 20% !important;
+}
+.custom-parent {
+  color: #de1e7e;
+}
+.custom-ripple {
+  color: #501ace;
+}
 @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors

@@ -1,7 +1,9 @@
 <template>
   <div id="user__card">
-    <p>Nom: {{ name }}</p>
-    <p>Score: {{ score }}</p>
+    <p>Produit: {{ name }}</p>
+    <input type="checkbox"/>
+    <label> Validé</label>
+        <!--checkbox produit-->
   </div>
 </template>
 
@@ -10,7 +12,6 @@ export default {
   name: "UserCard.vue",
   props: {
     name: String,
-    score: Number
   }
 }
 </script>
